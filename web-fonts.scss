@@ -1,0 +1,94 @@
+@mixin web-font($fonts, $variants: (), $subsets: (), $text: '', $effects: ()) {
+  $url: "//fonts.googleapis.com/css?family=";
+  $i: 0;
+  
+  // Add the family argument to the URL string.
+  // We can assume that the user will always specify at least one font.
+  @each $font in $fonts {
+    $i: $i + 1;
+  
+    // Add the name of the font.
+    $j: 0;
+    @each $word in $font {
+      $j: $j + 1;
+      $url: $url + $word;
+      
+      @if $j < length($font) {
+        $url: $url + "+";
+      }
+    }
+    
+    // If there is/are font variant(s) for this font, add them.
+    @if $j <= length($variants) {
+      $url: $url + ':';
+    
+      $k: 0;
+      @each $variant in nth($variants, $j) {
+        $k: $k + 1;
+        
+        $url: $url + $variant;
+        
+        // For some reason length($variant) doesn't work. Weird!
+        @if ($k < length(nth($variants, $j))) {
+          $url: $url + ',';
+        }
+      }
+    }
+    
+    @if $i < length($fonts) {
+      $url: $url + "|";
+    }
+  }
+  
+  // Add the subset argument to the URL string, if it exists.
+  @if length($subsets) > 0 {
+    $url: $url + "&subset=";
+    $i: 0;
+    @each $subset in $subsets {
+      $i: $i + 1;
+      $url: $url + $subset;
+      
+      @if $i < length($subsets) {
+        $url: $url + ',';
+      }
+    }
+  }
+  
+  // Add the text argument to the URL string, if it exists.
+  @if length($text) > 0 or $text == '' {
+    $url: $url + "&text=%20";
+    $i: 0;
+    @each $word in $text {
+      $i: $i + 1;
+      $url: $url + $word;
+    }
+  }
+  
+  // Add the effect argument to the URL string, if it exists.
+  @if length($effects) > 0 {
+    $url: $url + "&effect=";
+    $i: 0;
+    @each $effect in $effects {
+      $i: $i + 1;
+    
+      // Add the name of the font.
+      $j: 0;
+      @each $word in $effect {
+        $j: $j + 1;
+        $url: $url + $word;
+        
+        @if $j < length($effect) {
+          $url: $url + "-";
+        }
+      }
+      
+      @if $i < length($effects) {
+        $url: $url + "|";
+      }
+    }
+  }
+  
+  @import url(#{$url});
+}
+
+@include web-font((Tangerine, Open Sans), (italic bolditalic bold, i), (latin, cyrillic), 'thisismytext', (shadow multiple, float 3d));
