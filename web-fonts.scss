@@ -90,5 +90,3 @@
   
   @import url(#{$url});
 }
-
-@include web-font((Tangerine, Open Sans), (italic bolditalic bold, i), (latin, cyrillic), 'thisismytext', (shadow multiple, float 3d));
