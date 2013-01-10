@@ -1,3 +1,12 @@
+/*
+ * This is a fairly big mixin.
+ * The reason for this is that at the time of writing (09/01/2013),
+ * Sass does not include functions for substring or find/replace in string.
+ * Chris Eppstein sent a Pull Request to Sass with the str-extract (substring) function back in June,
+ * but it still has not been merged, due to lack of minor comments.
+ * That was five months ago.
+ */
+
 @mixin web-font($fonts, $variants: (), $subsets: (), $text: '', $effects: ()) {
   $url: "//fonts.googleapis.com/css?family=";
   $i: 0;
@@ -13,6 +22,7 @@
       $j: $j + 1;
       $url: $url + $word;
       
+      // Add a plus symbol between words.
       @if $j < length($font) {
         $url: $url + "+";
       }
@@ -28,6 +38,7 @@
         
         $url: $url + $variant;
         
+        // Add a comma between variants.
         // For some reason length($variant) doesn't work. Weird!
         @if ($k < length(nth($variants, $j))) {
           $url: $url + ',';
@@ -35,6 +46,9 @@
       }
     }
     
+    // Add a pipe between words.
+    // It would seem that a pipe isn't a valid URL character in its unescaped form,
+    // but Google reccommend using it anyway.
     @if $i < length($fonts) {
       $url: $url + "|";
     }
@@ -48,6 +62,7 @@
       $i: $i + 1;
       $url: $url + $subset;
       
+      // Add a comma between subsets.
       @if $i < length($subsets) {
         $url: $url + ',';
       }
@@ -55,13 +70,12 @@
   }
   
   // Add the text argument to the URL string, if it exists.
+  // $text does not actually need to be enclosed in brackets.
   @if length($text) > 0 or $text == '' {
-    $url: $url + "&text=%20";
-    $i: 0;
-    @each $word in $text {
-      $i: $i + 1;
-      $url: $url + $word;
-    }
+    
+    // To save the user the hassle of adding a space character every time they want
+    // to use a web font, we add one automatically.
+    $url: $url + "&text=%20#{$text}";
   }
   
   // Add the effect argument to the URL string, if it exists.
@@ -77,16 +91,22 @@
         $j: $j + 1;
         $url: $url + $word;
         
+        // Add a hyphen between words.
+        // A hyphen can actually be used to seperate words instead of a space,
+        // in which case the words will be counted as one and no extra hyphens will be added.
+        // Again, a string replacement function would make this a lot easier…
         @if $j < length($effect) {
           $url: $url + "-";
         }
       }
       
+      // Add a pipe between effects.
       @if $i < length($effects) {
         $url: $url + "|";
       }
     }
   }
   
+  // Finally!
   @import url(#{$url});
 }
