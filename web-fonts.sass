@@ -49,7 +49,7 @@
         $url: $url + ","
   // Add the text argument to the URL string, if it exists.
   // $text does not actually need to be enclosed in brackets.
-  @if length($text) > 0 or $text == ""
+  @if length($text) > 0 and $text != ""
     // To save the user the hassle of adding a space character every time they want
     // to use a web font, we add one automatically.
     $url: $url + "&text=%20#{$text}"
