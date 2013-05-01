@@ -7,8 +7,16 @@
  * That was five months ago.
  */
 
-@mixin web-font($fonts, $variants: (), $subsets: (), $text: '', $effects: ()) {
-  $url: "//fonts.googleapis.com/css?family=";
+@mixin web-font($fonts, $variants: (), $subsets: (), $text: '', $effects: (), $secure: false) {
+
+  //The $secure var defaults to false, the $url var is inited to use http
+  $url: "http://fonts.googleapis.com/css?family=";
+
+  //If flagged secure, import fonts using https
+  @if $secure {
+    $url: "https://fonts.googleapis.com/css?family=";
+  }
+
   $i: 0;
   
   // Add the family argument to the URL string.

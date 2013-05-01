@@ -6,8 +6,12 @@
  * but it still has not been merged, due to lack of minor comments.
  * That was five months ago.
 
-=web-font($fonts, $variants: (), $subsets: (), $text: "", $effects: ())
-  $url: "//fonts.googleapis.com/css?family="
+=web-font($fonts, $variants: (), $subsets: (), $text: "", $effects: (), $secure: false)
+  //The $secure var defaults to false, the $url var is inited to use http
+  $url: "http://fonts.googleapis.com/css?family="
+  //If flagged secure, import fonts using https
+  @if $secure
+    $url: "https://fonts.googleapis.com/css?family="
   $i: 0
   // Add the family argument to the URL string.
   // We can assume that the user will always specify at least one font.
