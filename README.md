@@ -10,12 +10,12 @@ Usage
 
 ### Example ###
 ```SCSS
-@include web-font((Tangerine, Open Sans), (italic bolditalic bold, i), (latin, cyrillic), ('thisismytext'), (shadow multiple, float 3d));
+@include web-font((Tangerine, Open Sans), (italic bolditalic bold, i), (latin, cyrillic), ('thisismytext'), (shadow multiple, float 3d), true);
 ```
 
-The @mixin takes five parameters, Font Families, Variants, Subsets, Characters and Effects.
-Each parameter is enclosed in brackets, as they are Sass lists.
-All parameters except from the Font Families are optional, and can be bypassed by using `()`.
+The @mixin takes six parameters, Font Families, Variants, Subsets, Characters, Effects and a Secure boolean.
+Each parameter except Secure is enclosed in brackets, as they are Sass lists.
+Font Families is the only required paramater, and all others can be bypassed by using `()`, except the Secure flag which can be left empty.
 
 ### In-depth Parameter Guide ###
 
@@ -55,13 +55,22 @@ It is important to note that any special characters must be URL-encoded. For con
 
 #### Font Effects ####
 
-The Font Effects parameter takes a comma-separated list of Google Web Fonts font effects for use with your fonts. Documentation on the Google Web Fonts font effects is available [here](https://developers.google.com/webfonts/docs/getting_started#Effects).
+The Font Effects parameter takes a comma-separated list of Google Web Fonts font effects for use with your fonts. Documentation on the Google Web Fonts font effects is available [https://developers.google.com/webfonts/docs/getting_started#Effects](here).
 
 In the case that the name a Font Effect is made up of more than one word, multiple words can be separated by either spaces or hyphens.
 
 The font effects are applied to all fonts, as Google Web Fonts does not currently allow you to specify font effects on a per-font basis.
 
 It is important not to use any quotes in this parameter.
+
+#### Secure Protocols ####
+
+By default, fonts are loaded using http. If you need them to be loaded using https, you will need to send the mixin a value of _true_ for the secure paramater. The example below will include Open Sans font, loading it via https.
+
+```SCSS
+@include web-font((Open Sans), $secure: true);
+```
+
 
 Known Issues and Possible Future Additions
 ------------------------------------------
