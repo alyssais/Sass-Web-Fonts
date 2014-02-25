@@ -1,9 +1,9 @@
 web-fonts.scss
 ==============
 
-A Sass mixin to allow easy, efficient usage of [https://google.com/webfonts](Google Web Fonts).
-Supports all feautures of Google Web Fonts.
-Google Web Fonts documentation is available [https://developers.google.com/webfonts/docs/getting_started](here).
+A Sass mixin to allow easy, efficient usage of [Google Web Fonts](https://google.com/fonts).
+Supports all features of Google Web Fonts.
+Google Web Fonts documentation is available [here](https://developers.google.com/webfonts/docs/getting_started).
 
 Usage
 -----
@@ -55,7 +55,7 @@ It is important to note that any special characters must be URL-encoded. For con
 
 #### Font Effects ####
 
-The Font Effects parameter takes a comma-separated list of Google Web Fonts font effects for use with your fonts. Documentation on the Google Web Fonts font effects is available [https://developers.google.com/webfonts/docs/getting_started#Effects](here).
+The Font Effects parameter takes a comma-separated list of Google Web Fonts font effects for use with your fonts. Documentation on the Google Web Fonts font effects is available [here](https://developers.google.com/webfonts/docs/getting_started#Effects).
 
 In the case that the name a Font Effect is made up of more than one word, multiple words can be separated by either spaces or hyphens.
 
@@ -65,7 +65,7 @@ It is important not to use any quotes in this parameter.
 
 #### Secure Protocols ####
 
-By default, fonts are loaded using http. If you need them to be loaded using https, you will need to send the mixin a value of _true_ for the secure paramater. The example below will include Open Sans font, loading it via https.
+By default, fonts are loaded using http. If you need them to be loaded using https, you will need to send the mixin a value of _true_ for the secure paramater. The example below will include the Open Sans font, loading it via https.
 
 ```SCSS
 @include web-font((Open Sans), $secure: true);
