@@ -81,7 +81,11 @@
 
 @mixin web-fonts($fonts...) {
   $web-fonts-protocol: "" !default;
-  $url: "#{$web-fonts-protocol}//fonts.googleapis.com/url?family=";
+  $protocol: $web-fonts-protocol;
+  @if str-length($protocol) > 0 {
+    $protocol: $protocol + ":";
+  }
+  $url: "#{$protocol}//fonts.googleapis.com/url?family=";
   $url: $url + wf-serialize($fonts);
   @import url($url);
 }
