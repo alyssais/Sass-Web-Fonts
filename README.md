@@ -1,7 +1,7 @@
 web-fonts.scss
 ==============
 
-A Sass mixin to allow easy, efficient usage of [https://google.com/webfonts](Google Web Fonts).
+A Sass mixin to allow easy, efficient usage of [Google Web Fonts](https://google.com/webfonts).
 
 Usage
 -----
