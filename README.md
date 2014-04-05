@@ -1,4 +1,4 @@
-web-fonts.scss
+Sass Web Fonts
 ==============
 
 A Sass mixin to allow easy, efficient usage of [Google Web Fonts](https://google.com/webfonts).
