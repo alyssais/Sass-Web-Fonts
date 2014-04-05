@@ -85,5 +85,3 @@
   $url: $url + wf-serialize($fonts);
   @import url($url);
 }
-
-@include web-fonts("Open Sans", ("Ubuntu": ("400", "italic")));
