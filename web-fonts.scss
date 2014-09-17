@@ -41,13 +41,13 @@
   @return $string;
 }
 
-@function wf-implode($list, $seperator: ",") {
-  $string: "";
+@function wf-implode($list, $separator: ',') {
+  $string: '';
   @for $i from 1 through length($list) {
     $el: nth($list, $i);
     $string: $string + $el;
     @if ($i < length($list)) {
-      $string: $string + $seperator;
+      $string: $string + $separator;
     }
   }
   @return $string;
@@ -59,14 +59,14 @@
     @each $font in $fonts {
       $serialized: append($serialized, wf-serialize($font));
     }
-    @return wf-implode($serialized, "|");
+    @return wf-implode($serialized, '|');
   }
 
   @if type-of($fonts) == 'map' {
     $serialized: ();
     @each $family, $variants in $fonts {
-      $variants: wf-implode($variants, ",");
-      $variants: wf-str-replace($variants, " ", "");
+      $variants: wf-implode($variants, ',');
+      $variants: wf-str-replace($variants, ' ', '');
       $serialized: append($serialized, "#{$family}:#{$variants}");
     }
     @return wf-serialize($serialized);
@@ -80,10 +80,10 @@
 }
 
 @mixin web-fonts($fonts...) {
-  $web-fonts-protocol: "" !default;
+  $web-fonts-protocol: '' !default;
   $protocol: $web-fonts-protocol;
   @if str-length($protocol) > 0 {
-    $protocol: $protocol + ":";
+    $protocol: $protocol + ':';
   }
   $url: "#{$protocol}//fonts.googleapis.com/css?family=";
   $url: $url + wf-serialize($fonts);
