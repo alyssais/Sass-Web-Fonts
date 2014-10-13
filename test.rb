@@ -9,7 +9,7 @@ Dir.glob("test/**/*.s{a,c}ss").each do |file|
     it "compiles correctly" do
       expected = file.sub(/\.s[ac]ss/, '.css')
       syntax = File.extname(file)[1..-1].to_sym
-      css = Sass.compile(open(file).read, syntax: syntax)
+      css = Sass.compile(open(file).read, syntax: syntax, filename: file)
       css.must_equal open(expected).read
     end
   end
