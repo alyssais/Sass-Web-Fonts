@@ -72,8 +72,8 @@ Testing
 Development of this mixin uses [SassUnit](https://github.com/penman/SassUnit) for unit tests. To run the tests after making a change to the mixin, do this:
 
 ```sh
-bundle install
-sassunit
+$ bundle install
+$ sassunit
 ```
 
 ---
