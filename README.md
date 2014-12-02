@@ -42,6 +42,13 @@ file (using a file:// url), this will not work. In this situation, it is
 possible to override the automatic protocol detection by setting the
 `$web-fonts-protocol` variable prior to calling the mixin.
 
+### Example
+
+```scss
+$web-fonts-protocol: "https"; // fonts will be loaded over HTTPS from here on.
+@include web-fonts("Open Sans"); // uses HTTPS;
+```
+
 Extra parameters
 ----------------
 
@@ -58,12 +65,5 @@ $web-fonts-params: (subset: "latin,latin-ext");
 ```
 
 A list of available parameters can be found in the [Google Web Fonts documentation](https://developers.google.com/fonts/docs/getting_started).
-
-### Example
-
-```scss
-$web-fonts-protocol: "https"; // fonts will be loaded over HTTPS from here on.
-@include web-fonts("Open Sans"); // uses HTTPS;
-```
 
 _Requires Sass 3.3 or later version. [Not compatible with libsass.](https://github.com/penman/Sass-Web-Fonts/issues/14) Pull requests welcome._
