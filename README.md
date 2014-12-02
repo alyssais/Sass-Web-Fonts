@@ -73,7 +73,7 @@ Development of this mixin uses [SassUnit](https://github.com/penman/SassUnit) fo
 
 ```sh
 $ bundle install
-$ sassunit
+$ bundle exec sassunit
 ```
 
 ---
