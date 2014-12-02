@@ -49,4 +49,4 @@ $web-fonts-protocol: "https"; // fonts will be loaded over HTTPS from here on.
 @include web-fonts("Open Sans"); // uses HTTPS;
 ```
 
-_Requires Sass 3.3 or later version. Pull requests welcome._
+_Requires Sass 3.3 or later version. [Not compatible with libsass.](https://github.com/penman/Sass-Web-Fonts/issues/14) Pull requests welcome._
