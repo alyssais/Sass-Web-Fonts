@@ -66,4 +66,6 @@ $web-fonts-params: (subset: "latin,latin-ext");
 
 A list of available parameters can be found in the [Google Web Fonts documentation](https://developers.google.com/fonts/docs/getting_started).
 
+---
+
 _Requires Sass 3.3 or later version. [Not compatible with libsass.](https://github.com/penman/Sass-Web-Fonts/issues/14) Pull requests welcome._
