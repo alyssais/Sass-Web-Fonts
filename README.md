@@ -3,6 +3,8 @@ Sass Web Fonts
 
 A Sass mixin to allow easy, efficient usage of [Google Web Fonts](https://google.com/webfonts).
 
+You can clone this repo and include [_web-fonts.scss](https://github.com/alyssais/Sass-Web-Fonts) in your project manually, or you can install the _sass-web-fonts_ package from [Bower](http://bower.io).
+
 Usage
 -----
 
