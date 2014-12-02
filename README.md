@@ -42,6 +42,23 @@ file (using a file:// url), this will not work. In this situation, it is
 possible to override the automatic protocol detection by setting the
 `$web-fonts-protocol` variable prior to calling the mixin.
 
+Extra parameters
+----------------
+
+To add additional parameters to the web fonts URL, you can override the `$web-fonts-params` variable with a map containing the extra URL params. For example, you can use it to specify character subsets:
+
+```scss
+$web-fonts-params: (subset: "latin,latin-ext");
+@include web-fonts("Open Sans");
+```
+
+```css
+// Generated CSS
+@import url("//fonts.googleapis.com/css?subset=latin%2Clatin-ext&family=Open%20Sans");
+```
+
+A list of available parameters can be found in the [Google Web Fonts documentation](https://developers.google.com/fonts/docs/getting_started).
+
 ### Example
 
 ```scss
