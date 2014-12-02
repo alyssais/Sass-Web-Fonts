@@ -53,7 +53,7 @@ $web-fonts-params: (subset: "latin,latin-ext");
 ```
 
 ```css
-// Generated CSS
+/* Generated CSS */
 @import url("//fonts.googleapis.com/css?subset=latin%2Clatin-ext&family=Open%20Sans");
 ```
 
