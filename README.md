@@ -66,6 +66,16 @@ $web-fonts-params: (subset: "latin,latin-ext");
 
 A list of available parameters can be found in the [Google Web Fonts documentation](https://developers.google.com/fonts/docs/getting_started).
 
+Testing
+-------
+
+Development of this mixin uses [SassUnit](https://github.com/alyssais/SassUnit) for unit tests. To run the tests after making a change to the mixin, do this:
+
+```sh
+bundle install
+sassunit
+```
+
 ---
 
 [ ![Codeship Status for alyssais/Sass-Web-Fonts](https://codeship.com/projects/2137d480-5c3b-0132-1892-4a3e16d9def4/status)](https://codeship.com/projects/50754)
