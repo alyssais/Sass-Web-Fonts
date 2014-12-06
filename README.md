@@ -7,6 +7,11 @@ You can clone this repo and include [_web-fonts.scss](https://github.com/penman/
 
 Usage
 -----
+First, import Sass Web Fonts like this:
+
+```scss
+@import "web-fonts";
+```
 
 ### Importing a single font
 
