@@ -85,6 +85,6 @@ $ bundle exec sassunit
 
 [ ![Codeship Status for alyssais/Sass-Web-Fonts](https://codeship.com/projects/2137d480-5c3b-0132-1892-4a3e16d9def4/status)](https://codeship.com/projects/50754)
 
-_Requires Sass 3.3 or later version. [Not compatible with libsass.](https://github.com/alyssais/Sass-Web-Fonts/issues/14) Pull requests welcome._
+_Requires Sass 3.3 or later version. **[Not compatible with libsass.](https://github.com/alyssais/Sass-Web-Fonts/issues/14)** Pull requests welcome._
 
 
