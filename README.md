@@ -7,6 +7,11 @@ You can clone this repo and include [_web-fonts.scss](https://github.com/penman/
 
 Usage
 -----
+First, import Sass Web Fonts like this:
+
+```scss
+@import "web-fonts";
+```
 
 ### Importing a single font
 
@@ -81,3 +86,5 @@ $ bundle exec sassunit
 [ ![Codeship Status for penman/Sass-Web-Fonts](https://codeship.com/projects/2137d480-5c3b-0132-1892-4a3e16d9def4/status)](https://codeship.com/projects/50754)
 
 _Requires Sass 3.3 or later version. [Not compatible with libsass.](https://github.com/penman/Sass-Web-Fonts/issues/14) Pull requests welcome._
+
+[You can follow me on Twitter.](https://twitter.com/PenmanRoss)
