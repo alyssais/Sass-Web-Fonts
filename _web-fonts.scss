@@ -102,11 +102,8 @@
 
 @function wf-params-string($fonts) {
   $web-fonts-params: () !global !default;
-  @if not map-has-key($web-fonts-params, "family") {
-    $family: wf-serialize($fonts);
-    $web-fonts-params: map-merge($web-fonts-params, (family: $family)) !global;
-  }
-  @return wf-query-string-encode($web-fonts-params);
+  $params: map-merge((family: wf-serialize($fonts)), $web-fonts-params);
+  @return wf-query-string-encode($params);
 }
 
 @mixin web-fonts($fonts...) {
