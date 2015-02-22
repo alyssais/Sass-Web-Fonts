@@ -1,9 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    minitest (5.4.3)
+    commander (4.3.0)
+      highline (~> 1.6.11)
+    highline (1.6.21)
+    minitest (5.5.1)
     sass (3.3.14)
-    sassunit (0.0.2)
+    sassunit (1.0.1)
+      commander
       minitest
       sass
 
