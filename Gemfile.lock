@@ -5,7 +5,7 @@ GEM
       highline (~> 1.6.11)
     highline (1.6.21)
     minitest (5.5.1)
-    sass (3.3.14)
+    sass (3.4.12)
     sassunit (1.0.1)
       commander
       minitest
@@ -15,5 +15,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  sass (~> 3.3.0)
+  sass (~> 3.3)
   sassunit
