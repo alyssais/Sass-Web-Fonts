@@ -1,7 +1,7 @@
 {
   "name": "sass-web-fonts",
   "main": "_web-fonts.scss",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/penman/Sass-Web-Fonts",
   "authors": [
     "Ross Penman <ross@pen.mn>"
