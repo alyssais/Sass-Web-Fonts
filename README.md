@@ -16,25 +16,25 @@ First, import Sass Web Fonts like this:
 ### Importing a single font
 
 ```scss
-@include web-fonts("Open Sans");
+@import url(web-fonts-url("Open Sans"));
 ```
 
 ### Specifying font variant
 
 ```scss
-@include web-fonts(("Open Sans": "bold"));
+@import url(web-fonts-url(("Open Sans": "bold")));
 ```
 
 ### Multiple variants
 
 ```scss
-@include web-fonts(("Open Sans": ("500", "600 italic")));
+@import url(web-fonts-url(("Open Sans": ("500", "600 italic"))));
 ```
 
 ### Multiple fonts
 
 ```scss
-@include web-fonts("Open Sans", ("Ubuntu": ("400", "italic")));
+@import url(web-fonts-url("Open Sans", ("Ubuntu": ("400", "italic"))));
 ```
 
 Protocols
@@ -51,7 +51,7 @@ possible to override the automatic protocol detection by setting the
 
 ```scss
 $web-fonts-protocol: "https"; // fonts will be loaded over HTTPS from here on.
-@include web-fonts("Open Sans"); // uses HTTPS;
+@import url(web-fonts-url("Open Sans"); // uses HTTPS);
 ```
 
 Extra parameters
@@ -61,7 +61,7 @@ To add additional parameters to the web fonts URL, you can override the `$web-fo
 
 ```scss
 $web-fonts-params: (subset: "latin,latin-ext");
-@include web-fonts("Open Sans");
+@import url(web-fonts-url("Open Sans"));
 ```
 
 ```css
