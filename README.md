@@ -81,6 +81,11 @@ $ bundle install
 $ bundle exec sassunit
 ```
 
+Troubleshooting
+---------------
+
+If you get a `Sass::SyntaxError` when using the library, you probably need to update Sass. See [issue #7](https://github.com/alyssais/Sass-Web-Fonts/issues/7) for more information.
+
 ---
 
 [ ![Codeship Status for alyssais/Sass-Web-Fonts](https://codeship.com/projects/2137d480-5c3b-0132-1892-4a3e16d9def4/status)](https://codeship.com/projects/50754)
