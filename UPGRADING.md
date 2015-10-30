@@ -18,4 +18,4 @@ Should now be written:
 
 This change was made to allow Sass Web Fonts to be used with [libsass](https://github.com/sass/libsass).
 
-If you have a large project with lots of calls to `web-fonts()` that you don't want to replace by hand, you can replace any occurrence of `@import "web-fonts"` with `@import "web-fonts/compat"` to continue using the old syntax. However, it is recommended that you switch to using the new syntax at some point, because `web-fonts/compat` will be removed in a future release of the library.
+If you have a large project with lots of calls to `web-fonts()` that you don't want to replace by hand, you can include `web-fonts/compat.scss` from the Sass Web Fonts repository and replace any occurrence of `@import "web-fonts"` with `@import "web-fonts/compat"` to continue using the old syntax. However, it is recommended that you switch to using the new syntax at some point, because `web-fonts/compat` will be removed in a future release of the library.
