@@ -1,0 +1,3 @@
+@import "web-fonts/compat";
+$web-fonts-params: (subset: "latin,latin-ext");
+@include web-fonts("Open Sans");
