@@ -16,10 +16,10 @@ First, import Sass Web Fonts like this:
 **Note:** if you are using libsass, you can't pass the result of `web-fonts-url()` directly into `@import url()`. You have to store it in a variable first. This is due to the compiler not supporting importing urls from functions.
 
 ```scss
-# This won't work with libsass
+// This won't work with libsass
 @import url(web-fonts-url("Open Sans"));
 
-# This will work with libsass
+// This will work with libsass
 $url: web-fonts-url("Open Sans");
 @import url($url);
 ```
