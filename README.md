@@ -5,8 +5,8 @@ A Sass mixin to allow easy, efficient usage of [Google Web Fonts](https://google
 
 You can clone this repo and include [_web-fonts.scss](https://github.com/alyssais/Sass-Web-Fonts) in your project manually, or you can install the _sass-web-fonts_ package from [Bower](http://bower.io).
 
-Upgrading
----------
+Upgrading from a previous version of Sass Web Fonts
+---------------------------------------------------
 
 Sass Web Fonts 2.x introduces breaking changes from 1.x. If you're upgrading from Sass Web Fonts 1.x, read the [upgrading guide](UPGRADING.md#upgrading-from-1x-to-2x). It's very easy. :)
 
