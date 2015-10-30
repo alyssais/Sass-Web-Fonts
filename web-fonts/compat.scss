@@ -1,0 +1,5 @@
+@import "web-fonts";
+
+@mixin web-fonts($fonts...) {
+  @import url(web-fonts-url($fonts...));
+}
