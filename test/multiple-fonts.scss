@@ -1,2 +1,3 @@
 @import "web-fonts";
-@include web-fonts("Open Sans", ("Ubuntu": ("400", "italic")));
+$url: web-fonts-url("Open Sans", ("Ubuntu": ("400", "italic")));
+@import url($url);

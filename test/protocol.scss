@@ -1,12 +1,16 @@
 @import "web-fonts";
 
-@include web-fonts("Open Sans");
+$url: web-fonts-url("Open Sans");
+@import url($url);
 
 $web-fonts-protocol: "http";
-@include web-fonts("Open Sans");
+$url: web-fonts-url("Open Sans");
+@import url($url);
 
 $web-fonts-protocol: "https";
-@include web-fonts("Open Sans");
+$url: web-fonts-url("Open Sans");
+@import url($url);
 
 $web-fonts-protocol: "";
-@include web-fonts("Open Sans");
+$url: web-fonts-url("Open Sans");
+@import url($url);
