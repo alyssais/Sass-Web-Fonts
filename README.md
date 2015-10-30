@@ -13,6 +13,17 @@ First, import Sass Web Fonts like this:
 @import "web-fonts";
 ```
 
+**Note:** if you are using libsass, you can't pass the result of `web-fonts-url()` directly into `@import url()`. You have to store it in a variable first. This is due to the compiler not supporting importing urls from functions.
+
+```scss
+# This won't work with libsass
+@import url(web-fonts-url("Open Sans"));
+
+# This will work with libsass
+$url: web-fonts-url("Open Sans");
+@import url($url);
+```
+
 ### Importing a single font
 
 ```scss
