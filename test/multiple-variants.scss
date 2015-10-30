@@ -1,2 +1,3 @@
 @import "web-fonts";
-@include web-fonts(("Open Sans": ("500", "600 italic")));
+$url: web-fonts-url(("Open Sans": ("500", "600 italic")));
+@import url($url);

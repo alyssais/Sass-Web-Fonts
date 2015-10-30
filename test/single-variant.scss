@@ -1,2 +1,3 @@
 @import "web-fonts";
-@include web-fonts(("Open Sans": "bold"));
+$url: web-fonts-url(("Open Sans": "bold"));
+@import url($url);
