@@ -5,6 +5,11 @@ A Sass mixin to allow easy, efficient usage of [Google Web Fonts](https://google
 
 You can clone this repo and include [_web-fonts.scss](https://github.com/alyssais/Sass-Web-Fonts) in your project manually, or you can install the _sass-web-fonts_ package from [Bower](http://bower.io).
 
+Upgrading from a previous version of Sass Web Fonts
+---------------------------------------------------
+
+Sass Web Fonts 2.x introduces breaking changes from 1.x. If you're upgrading from Sass Web Fonts 1.x, read the [upgrading guide](UPGRADING.md#upgrading-from-1x-to-2x). It's very easy. :)
+
 Usage
 -----
 First, import Sass Web Fonts like this:
@@ -13,28 +18,41 @@ First, import Sass Web Fonts like this:
 @import "web-fonts";
 ```
 
+### Using with [libsass](https://github.com/sass/libsass)
+
+If you are using libsass, you can't pass the result of `web-fonts-url()` directly into `@import url()`. You have to store it in a variable first. This is due to the compiler not supporting importing urls from functions.
+
+```scss
+// This won't work with libsass
+@import url(web-fonts-url("Open Sans"));
+
+// This will work with libsass
+$url: web-fonts-url("Open Sans");
+@import url($url);
+```
+
 ### Importing a single font
 
 ```scss
-@include web-fonts("Open Sans");
+@import url(web-fonts-url("Open Sans"));
 ```
 
 ### Specifying font variant
 
 ```scss
-@include web-fonts(("Open Sans": "bold"));
+@import url(web-fonts-url(("Open Sans": "bold")));
 ```
 
 ### Multiple variants
 
 ```scss
-@include web-fonts(("Open Sans": ("500", "600 italic")));
+@import url(web-fonts-url(("Open Sans": ("500", "600 italic"))));
 ```
 
 ### Multiple fonts
 
 ```scss
-@include web-fonts("Open Sans", ("Ubuntu": ("400", "italic")));
+@import url(web-fonts-url("Open Sans", ("Ubuntu": ("400", "italic"))));
 ```
 
 Protocols
@@ -51,7 +69,7 @@ possible to override the automatic protocol detection by setting the
 
 ```scss
 $web-fonts-protocol: "https"; // fonts will be loaded over HTTPS from here on.
-@include web-fonts("Open Sans"); // uses HTTPS;
+@import url(web-fonts-url("Open Sans"); // uses HTTPS);
 ```
 
 Extra parameters
@@ -61,7 +79,7 @@ To add additional parameters to the web fonts URL, you can override the `$web-fo
 
 ```scss
 $web-fonts-params: (subset: "latin,latin-ext");
-@include web-fonts("Open Sans");
+@import url(web-fonts-url("Open Sans"));
 ```
 
 ```css
@@ -89,6 +107,7 @@ Troubleshooting
 If you get a `Sass::SyntaxError` when using the library, you probably need to update Sass. See [issue #7](https://github.com/alyssais/Sass-Web-Fonts/issues/7) for more information.
 
 ---
-_Requires Sass 3.3 or later version. **[Not compatible with libsass.](https://github.com/alyssais/Sass-Web-Fonts/issues/14)** Pull requests welcome._
+
+_Requires Sass 3.3 or later version. Pull requests welcome._
 
 
