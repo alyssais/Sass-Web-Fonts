@@ -1,7 +1,7 @@
 {
   "name": "sass-web-fonts",
   "main": "_web-fonts.scss",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "homepage": "https://github.com/alyssais/Sass-Web-Fonts",
   "authors": [
     "Alyssa Ross <hi@alyssa.is>"
