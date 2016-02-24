@@ -1,0 +1,29 @@
+{
+  "name": "sass-web-fonts",
+  "version": "2.0.1",
+  "description": "A Sass mixin to allow easy, efficient usage of Google Web Fonts.",
+  "main": "_web-fonts.scss",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "bundle exec sassunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penman/sass-web-fonts.git"
+  },
+  "keywords": [
+    "sass",
+    "web",
+    "fonts",
+    "google",
+    "mixin"
+  ],
+  "author": "Ross Penman <ross@pen.mn> (https://rosspenman.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/penman/sass-web-fonts/issues"
+  },
+  "homepage": "https://github.com/penman/sass-web-fonts#readme"
+}
