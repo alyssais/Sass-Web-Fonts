@@ -1,6 +1,6 @@
 {
   "name": "sass-web-fonts",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A Sass mixin to allow easy, efficient usage of Google Web Fonts.",
   "main": "_web-fonts.scss",
   "directories": {
