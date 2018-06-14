@@ -109,6 +109,6 @@
 @function web-fonts-url($fonts...) {
   $protocol: wf-protocol();
   $query-string: wf-params-string($fonts);
-  $url: "https://fonts.googleapis.com/css?#{$query-string}";
+  $url: "#{$protocol}//fonts.googleapis.com/css?#{$query-string}";
   @return $url;
 }
