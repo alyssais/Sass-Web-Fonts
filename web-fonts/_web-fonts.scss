@@ -80,7 +80,6 @@
   @warn "Unsupported font type: #{type-of($fonts)}";
 }
 
-/* google apis must be preceded by `https`
 @function wf-protocol() {
   $web-fonts-protocol: '' !global !default;
   $protocol: $web-fonts-protocol;
@@ -89,7 +88,6 @@
   }
   @return $protocol;
 }
-*/
 
 @function wf-query-string-encode($params) {
   $query-string: "";
