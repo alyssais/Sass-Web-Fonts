@@ -18,6 +18,64 @@ First, import Sass Web Fonts like this:
 @import "web-fonts";
 ```
 
+### Installing with npm and using a node-based task-runner
+
+1. Add Sass-Web-Fonts as a dependency:
+
+    ```bash
+    npm install --save sass-web-fonts
+    ```
+
+1. You’ll need to add Sass-Web-Fonts to your node-sass `includePaths` option. Commonly in this way: `require("sass-web-fonts").includePaths`. But specifically you have to refer to the framework you are using.
+
+
+#### With Grunt
+
+```js
+const sass = require( "node-sass" );
+
+module.exports = function( grunt ) {
+	require( "load-grunt-tasks" )( grunt );
+
+	grunt.initConfig( {
+		sass: {
+			options: {
+				implementation: sass,
+				sourceMap: false,
+				outputStyle: "compressed",
+				sourceComments: false,
+
+				includePaths: [
+					//require( "module-one" ).includePaths,
+					//require( "module-two" ).includePaths,
+					require( "sass-web-fonts" ).includePaths
+				]
+			},
+			public: {
+				files: {
+					"master.css": "master.scss"
+				}
+			}
+		}
+  } );
+};
+```
+
+#### With Gulp
+
+```js
+var gulp = require( "gulp" );
+var sass = require( "gulp-sass" );
+
+gulp.task( "sass", function () {
+  gulp.src( "input.scss" )
+    .pipe( sass( {
+      includePaths: require( "sass-web-fonts" ).includePaths
+    } ) )
+    .pipe( gulp.dest( "output.css" ) );
+} );
+```
+
 ### Using with [libsass](https://github.com/sass/libsass)
 
 If you are using libsass, you can't pass the result of `web-fonts-url()` directly into `@import url()`. You have to store it in a variable first. This is due to the compiler not supporting importing urls from functions.
@@ -109,5 +167,3 @@ If you get a `Sass::SyntaxError` when using the library, you probably need to up
 ---
 
 _Requires Sass 3.3 or later version. Pull requests welcome._
-
-
